@@ -14,8 +14,8 @@ const Quiz = () => {
         }
         setTimeout(
             ()=>{
-                if(currentQuestion<questions.length){
-                    setCurrentQuestion(currentQuestion+1);
+                if(currentQuestion<questions.length-1){
+                    setCurrentQuestion(prev=>prev+1);
                 }else{
                     setIsFinal(true);
                 }
