@@ -4,4 +4,13 @@
 @theme{
   --font-poppins: "Poppins",sans-serif;
 }
+body {
+    font-family: "Poppins", sans-serif;
+     background-image: linear-gradient(80deg, rgb(104, 41, 231), rgb(24, 15, 107));
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
 
