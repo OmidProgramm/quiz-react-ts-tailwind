@@ -21,7 +21,7 @@ const Quiz = () => {
                     setIsFinal(true);
                 }
             }
-            ,500)
+            ,800)
     }
      const windowRefresh =()=>{
         setScore(0);
@@ -41,7 +41,7 @@ const Quiz = () => {
                 </div>
             ):(
                 <div className="w-full flex flex-col items-center p-3 gap-2 font-poppins">
-            <h3 className="text-2xl font-bold">{`${currentQuestion+1}: ${questions[currentQuestion].question}`}</h3>
+            <h3 className="text-2xl font-bold">{`${currentQuestion+1} : ${questions[currentQuestion].question}`}</h3>
             <ul className="w-full flex flex-col justify-center items-center gap-2">
 
                 {
@@ -49,7 +49,18 @@ const Quiz = () => {
                         (item:string,index:number)=>(
                             <li 
                                 onClick={()=>handelAnswer(item)}
-                                key={index} className="w-full text-left font-bold text-lg hover:bg-gray-700 p-2 rounded-lg cursor-pointer transition-all duration-300 hover:text-white">{item}</li>
+                                key={index} className={`
+                                        w-full text-left font-bold text-lg p-2 rounded-lg cursor-pointer transition-all duration-300
+                                        hover:bg-gray-400
+                                        ${
+                                        selectedOption === item
+                                            ? item === questions[currentQuestion].answer
+                                            ? 'bg-green-300'
+                                            : 'bg-red-400'
+                                            : ''
+                                        }
+                                    `}
+                                >{item}</li>
                         )
                     )
                 } 
