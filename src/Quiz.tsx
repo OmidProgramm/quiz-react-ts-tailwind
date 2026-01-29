@@ -24,6 +24,10 @@ const Quiz = () => {
             ,500)
     }
      const windowRefresh =()=>{
+        setScore(0);
+        setCurrentQuestion(0);
+        setSelectedOption('');
+        setIsFinal(false);
          window.location.reload();
     }
   return (
